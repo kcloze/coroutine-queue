@@ -9,11 +9,11 @@
  */
 require  __DIR__. '/../vendor/autoload.php';
 
-use Coroutine\Queue\Command\QueueCommand;
+use Coroutine\Queue\Command\RabbitmqCommand;
 use Symfony\Component\Console\Application;
 
-$command = new QueueCommand();
 $application = new Application();
+$command = new RabbitmqCommand();
 $application->add($command);
 $application->setDefaultCommand($command->getName());
 $application->run();

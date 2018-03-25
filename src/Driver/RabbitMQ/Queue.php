@@ -45,15 +45,26 @@ class Queue extends CliQueue
     protected $channel;
 
 
-    /**
-     * @inheritdoc
-     */
-    public function init()
+    // /**
+    //  * @inheritdoc
+    //  */
+    // public function init()
+    // {
+    //     parent::init();
+    //     // Event::on(App::class, BaseApp::EVENT_AFTER_REQUEST, function () {
+    //     //     $this->close();
+    //     // });
+    // }
+    
+    public function __construct(array $config=[])
     {
-        parent::init();
-        // Event::on(App::class, BaseApp::EVENT_AFTER_REQUEST, function () {
-        //     $this->close();
-        // });
+        $this->host=$config['host']??$this->host;
+        $this->port=$config['port']??$this->port;
+        $this->user=$config['user']??$this->user;
+        $this->password=$config['password']??$this->password;
+        $this->vhost=$config['vhost']??$this->vhost;
+        $this->queueName=$config['queueName']??$this->queueName;
+        $this->exchangeName=$config['exchangeName']??$this->exchangeName;
     }
 
     /**
