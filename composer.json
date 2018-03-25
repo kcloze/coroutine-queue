@@ -1,0 +1,44 @@
+{
+    "name": "coroutine/queue",
+    "type": "library",
+    "keywords": [
+        "php",
+        "swoole",
+        "swoft",
+        "queue",
+        "rabbitmq",
+        "redis"
+    ],
+    "description": "Coroutine queue base on swoole",
+    "license": "Apache-2.0",
+    "require-dev": {
+        "eaglewu/swoole-ide-helper": "dev-master",
+        "phpunit/phpunit": "^5.7"
+    },
+    "require": {
+        "symfony/console":"^4.0",
+        "swoft/php-amqplib":"dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Coroutine\\Queue\\": "src/"
+        },
+        "files": [
+            "src/Helper/Functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Swoft\\Queue\\Test\\": "test"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    ],
+    "scripts": {
+        "test": "./vendor/bin/phpunit -c phpunit.xml"
+    }
+}
