@@ -26,10 +26,10 @@ class  RabbitmqCommand extends Command
         $config=[
             'host'          => '192.168.9.24',
             'user'          => 'phpadmin',
-            'pass'          => 'phpadmin',
+            'password'      => 'phpadmin',
             'port'          => '5671',
             'vhost'         => 'php',
-            'exchange'      => 'php.amqp.ext',
+            'exchangeName'  => 'php.amqp.ext',
         ];
         $queue=new \Coroutine\Queue\Driver\RabbitMQ\Queue($config);
         $queue->listen();

@@ -12,7 +12,6 @@ namespace Coroutine\Queue\Driver\RabbitMQ;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
-use Swoft\App;
 use Coroutine\Queue\Exception\NotSupportedException;
 use Coroutine\Queue\Driver\Queue as CliQueue;
 
